@@ -26,7 +26,7 @@ pipeline {
                 script {
                     // Run Maven build
                     echo 'Building the project using Maven...'
-                    sh "'${MAVEN_HOME}E:/apache-maven-3.9.9/bin/mvn'' clean install"
+                    sh "'${MAVEN_HOME}/bin/mvn' clean install"
                 }
             }
         }
