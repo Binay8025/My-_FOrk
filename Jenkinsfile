@@ -1,21 +1,36 @@
 pipeline {
-    
-          stages {
+    agent any  // Runs on any available Jenkins agent
+
+    environment {
+        // Define environment variables
+        MAVEN_HOME = 'E:apache-maven-3.9.9' // Path to Maven installation (adjust as necessary)
+       
+    }
+
+    tools {
+        maven 'Maven 3_9_9'  // Use Maven 3 tool configured in Jenkins
+    }
+
+    stages {
         stage('Checkout') {
             steps {
-                // Pull the code from the repository
-                checkout scm
-            }
-        }
-
-        stage('Build and Install') {
-            steps {
                 script {
-                    // Run Maven clean install
-                    bat 'mvn clean install'  // Unix/Linux command
-                    // On Windows, you would use 'bat "mvn clean install"'
+                    // Checkout the code from the Git repository
+                    git branch: 'master', url: 'https://github.com/Binay8025/My-_FOrk.git'
                 }
             }
         }
-    }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Run Maven build
+                    echo 'Building the project using Maven...'
+                    sh "'${MAVEN_HOME}/bin/mvn' clean install"
+                }
+            }
+        }
+
+    }   
+    
 }
