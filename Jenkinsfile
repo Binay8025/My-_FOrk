@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define environment variables
-        MAVEN_HOME = 'E:/apache-maven-3.9.9' // Path to Maven installation (adjust as necessary)
+        MAVEN_HOME = 'E:/apache-maven-3.9.9/bin/mvn' // Path to Maven installation (adjust as necessary)
        
     }
 
@@ -26,7 +26,7 @@ pipeline {
                 script {
                     // Run Maven build
                     echo 'Building the project using Maven...'
-                    sh "'${MAVEN_HOME}/bin/mvn' clean install"
+                    bat "'${MAVEN_HOME}/bin/mvn' clean install"
                 }
             }
         }
