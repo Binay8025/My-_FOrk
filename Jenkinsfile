@@ -1,8 +1,6 @@
 pipeline {
-    agent any  // This specifies the agent (i.e., where the job will run)
-
-        }
-    stages {
+    
+          stages {
         stage('Checkout') {
             steps {
                 // Pull the code from the repository
