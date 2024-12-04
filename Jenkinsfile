@@ -1,9 +1,7 @@
 pipeline {
     agent any  // This specifies the agent (i.e., where the job will run)
 
-    tool{
-        maven 'maven_3_9_9'
-    }
+        }
     stages {
         stage('Checkout') {
             steps {
