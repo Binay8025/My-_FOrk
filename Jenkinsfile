@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define environment variables
-        MAVEN_HOME = 'E:apache-maven-3.9.9' // Path to Maven installation (adjust as necessary)
+        MAVEN_HOME = 'E:apache-maven-3.9.9\bin\mvn' // Path to Maven installation (adjust as necessary)
        
     }
 
